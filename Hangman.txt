@@ -1,0 +1,14 @@
+Textures:
+- Post to hang on
+- Person
+   - Head
+   - 2 Arms
+   - body
+   - 2 legs
+- every letter
+- dashes for blank spaces in the word
+- something to indicate an already used letter (maybe an X or / through it)
+
+Scripts:
+- start menu: choose to type in a word or have a word randomly selected and then move to 2nd scene
+- Word: creates/stores the word. 

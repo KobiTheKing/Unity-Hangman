@@ -723,6 +723,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputWord: {fileID: 123344342}
+  wordListTextFile: {fileID: 4900000, guid: 02fe585f77ece0b49bf20c66db6b1d28, type: 3}
 --- !u!4 &1061037103
 Transform:
   m_ObjectHideFlags: 0

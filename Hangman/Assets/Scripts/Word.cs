@@ -17,11 +17,13 @@ public class Word : MonoBehaviour {
     //True if in the 'GetWord' scene
     private static bool inGetWordScene;
 
+    private ReadText readText;
+
     /*
      * Description: Used for initialization
      */
     void Awake() {
-
+        readText = GameObject.FindObjectOfType<ReadText>();
     }
 
     /*
@@ -49,6 +51,7 @@ public class Word : MonoBehaviour {
      */
     private void RandomWord() {
         Debug.Log("random");
+        readText.ReadTextFile();
     }
 
     public static bool RandomizeWord { get => randomizeWord; set => randomizeWord = value; }

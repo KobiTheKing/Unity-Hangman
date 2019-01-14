@@ -8,6 +8,9 @@ using UnityEngine;
  */
 public class Word : MonoBehaviour {
 
+    //The word used in the Hangman game
+    private static string currentWord;
+
     //True if randomizing word, false if typing word
     private static bool randomizeWord;
 
@@ -50,4 +53,5 @@ public class Word : MonoBehaviour {
 
     public static bool RandomizeWord { get => randomizeWord; set => randomizeWord = value; }
     public static bool InGetWordScene { get => inGetWordScene; set => inGetWordScene = value; }
+    public static string CurrentWord { get => currentWord; set => currentWord = value; }
 }

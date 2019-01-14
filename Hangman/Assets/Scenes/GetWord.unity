@@ -584,7 +584,7 @@ GameObject:
   - component: {fileID: 874300247}
   - component: {fileID: 874300246}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Word
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

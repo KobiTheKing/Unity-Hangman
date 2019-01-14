@@ -18,9 +18,7 @@ public class Word : MonoBehaviour {
      * Description: Used for initialization
      */
     void Awake() {
-        //Default values
-        RandomizeWord = true;
-        InGetWordScene = false;
+
     }
 
     /*

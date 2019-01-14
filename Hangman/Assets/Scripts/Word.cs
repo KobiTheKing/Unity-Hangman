@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 /*
  * Description: Generates and stores the word being guessed
@@ -17,7 +19,14 @@ public class Word : MonoBehaviour {
     //True if in the 'GetWord' scene
     private static bool inGetWordScene;
 
+    //Access the 'ReadText' script
     private ReadText readText;
+
+    //Access the UI canvas groups in the 'GetWord' scene
+    [SerializeField]
+    private CanvasGroup typeWordGroup;
+    [SerializeField]
+    private CanvasGroup randomWordGroup;
 
     /*
      * Description: Used for initialization
@@ -30,6 +39,7 @@ public class Word : MonoBehaviour {
      * Description: Called when object is created (after 'Awake')
      */
     private void Start() {
+        //Prevents 'RandomWord()' and 'TypeWord()' from being called when not in the 'GetWord' scene
         if (InGetWordScene) {
             if (RandomizeWord) {
                 RandomWord();
@@ -43,14 +53,27 @@ public class Word : MonoBehaviour {
      * Description: Allows the user to type in a word for the game
      */
     private void TypeWord() {
-        Debug.Log("type");
+        //Enables the type word group
+        typeWordGroup.alpha = 1f;
+        typeWordGroup.blocksRaycasts = true;
+
+        //Disables the random word group
+        randomWordGroup.alpha = 0f;
+        randomWordGroup.blocksRaycasts = false;
     }
 
     /*
      * Description: Randomly generated a word for the game
      */
     private void RandomWord() {
-        Debug.Log("random");
+        //Disables the type word group
+        typeWordGroup.alpha = 0f;
+        typeWordGroup.blocksRaycasts = false;
+
+        //Enables the random word group
+        randomWordGroup.alpha = 1f;
+        randomWordGroup.blocksRaycasts = true;
+
         readText.ReadTextFile();
     }
 

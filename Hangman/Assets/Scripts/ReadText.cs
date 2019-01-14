@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 /*
@@ -10,10 +11,12 @@ using UnityEngine.UI;
 public class ReadText : MonoBehaviour {
 
     //InputField for the word
-    public InputField inputWord;
+    [SerializeField]
+    private InputField inputWord;
 
     //Access 'words.txt'
-    public TextAsset wordListTextFile;
+    [SerializeField]
+    private TextAsset wordListTextFile;
 
 
 
@@ -25,6 +28,9 @@ public class ReadText : MonoBehaviour {
         //Makes the string lowercase
         tempWord = tempWord.ToLower();
         Word.CurrentWord = tempWord;
+        Debug.Log(Word.CurrentWord);
+
+        SceneManager.LoadScene("Main");
     }
 
     /*
@@ -40,6 +46,8 @@ public class ReadText : MonoBehaviour {
         //Randomly picks a word from the list
         Word.CurrentWord = eachWord[Random.Range(0, eachWord.Count)].ToLower();
         Debug.Log(Word.CurrentWord);
+
+        SceneManager.LoadScene("Main");
     }
 
 }

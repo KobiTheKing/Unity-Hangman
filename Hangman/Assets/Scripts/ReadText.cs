@@ -35,7 +35,7 @@ public class ReadText : MonoBehaviour {
         string tempWord = inputWord.text;
         //Makes the string lowercase
         tempWord = tempWord.ToLower();
-        Word.CurrentWord = tempWord;
+        word.GetWord(tempWord);
         Debug.Log(Word.CurrentWord);
 
         SceneManager.LoadScene("Main");

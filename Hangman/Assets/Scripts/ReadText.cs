@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 /*
  * Description: Picks a random word of of the text file or allows the user to input a word
- * Methods: void ReadUserInput(), void ReadTextFile()
+ * Methods: void Awake(), void ReadUserInput(), void ReadTextFile()
  */
 public class ReadText : MonoBehaviour {
 
@@ -18,7 +18,15 @@ public class ReadText : MonoBehaviour {
     [SerializeField]
     private TextAsset wordListTextFile;
 
+    //Access the 'Word' script
+    private Word word;
 
+    /*
+     * Description: Used for initalization
+     */
+    private void Awake() {
+        word = GameObject.FindObjectOfType<Word>();
+    }
 
     /*
      * Description: Gets the user input and sends it to the 'Word' script
@@ -45,6 +53,7 @@ public class ReadText : MonoBehaviour {
 
         //Randomly picks a word from the list
         Word.CurrentWord = eachWord[Random.Range(0, eachWord.Count)].ToLower();
+        word.GetWord 
         Debug.Log(Word.CurrentWord);
 
         SceneManager.LoadScene("Main");

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 /*
  * Description: Generates and stores the word being guessed
- * Methods: void Awake(), void Start(), void TypeWord()
+ * Methods: void Awake(), void Start(), void TypeWord(), string GetWord()
  */
 public class Word : MonoBehaviour {
 
@@ -75,6 +75,10 @@ public class Word : MonoBehaviour {
         randomWordGroup.blocksRaycasts = true;
 
         readText.ReadTextFile();
+    }
+
+    public string GetWord(string fullWord) {
+
     }
 
     public static bool RandomizeWord { get => randomizeWord; set => randomizeWord = value; }

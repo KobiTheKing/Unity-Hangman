@@ -52,8 +52,7 @@ public class ReadText : MonoBehaviour {
         eachWord.AddRange(wholeTxtFileAsOneString.Split("\n"[0]));
 
         //Randomly picks a word from the list
-        Word.CurrentWord = eachWord[Random.Range(0, eachWord.Count)].ToLower();
-        word.GetWord 
+        word.GetWord(eachWord[Random.Range(0, eachWord.Count)].ToLower());
         Debug.Log(Word.CurrentWord);
 
         SceneManager.LoadScene("Main");

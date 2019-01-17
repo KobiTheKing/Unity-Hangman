@@ -13,6 +13,8 @@ public class Word : MonoBehaviour {
     //The word used in the Hangman game
     private static string currentWord;
 
+    private static char[] wordCharacters;
+
     //True if randomizing word, false if typing word
     private static bool randomizeWord;
 
@@ -78,7 +80,9 @@ public class Word : MonoBehaviour {
     }
 
     public string GetWord(string fullWord) {
+        currentWord = fullWord;
 
+        wordCharacters = currentWord.ToCharArray();
     }
 
     public static bool RandomizeWord { get => randomizeWord; set => randomizeWord = value; }

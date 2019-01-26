@@ -19,9 +19,6 @@ public class Word : MonoBehaviour {
     //True if randomizing word, false if typing word
     private static bool randomizeWord;
 
-    //True if in the 'GetWord' scene
-    private static bool inGetWordScene;
-
     //Access the 'ReadText' script
     private ReadText readText;
 
@@ -77,6 +74,5 @@ public class Word : MonoBehaviour {
     }
 
     public static bool RandomizeWord { get => randomizeWord; set => randomizeWord = value; }
-    public static bool InGetWordScene { get => inGetWordScene; set => inGetWordScene = value; }
     public static string CurrentWord { get => currentWord; set => currentWord = value; }
 }

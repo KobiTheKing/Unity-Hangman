@@ -25,7 +25,6 @@ public class StartMenu : MonoBehaviour {
      */
     public void TypeWord() {
         Word.RandomizeWord = false;
-        Word.InGetWordScene = true;
 
         SceneManager.LoadScene("GetWord");
     }
@@ -35,7 +34,6 @@ public class StartMenu : MonoBehaviour {
      */
     public void RandomWord() {
         Word.RandomizeWord = true;
-        Word.InGetWordScene = true;
 
         SceneManager.LoadScene("GetWord");
     }

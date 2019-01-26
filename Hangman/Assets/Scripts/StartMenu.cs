@@ -14,7 +14,7 @@ public class StartMenu : MonoBehaviour {
     private Word word;
 
     /*
-     * Used for initialization
+     * Used for initialization and getting script references
      */
     private void Awake() {
         word = GameObject.FindObjectOfType<Word>();

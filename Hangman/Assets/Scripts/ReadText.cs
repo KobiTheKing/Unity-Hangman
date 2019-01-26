@@ -22,7 +22,7 @@ public class ReadText : MonoBehaviour {
     private Word word;
 
     /*
-     * Description: Used for initalization
+     * Description: Used for initalization and getting script references
      */
     private void Awake() {
         word = GameObject.FindObjectOfType<Word>();

@@ -13,6 +13,7 @@ public class Word : MonoBehaviour {
     //The word used in the Hangman game
     private static string currentWord;
 
+    //Array of every character in the word
     private static char[] wordCharacters;
 
     //True if randomizing word, false if typing word
@@ -31,30 +32,16 @@ public class Word : MonoBehaviour {
     private CanvasGroup randomWordGroup;
 
     /*
-     * Description: Used for initialization
+     * Description: Used for initialization and getting script references
      */
     void Awake() {
         readText = GameObject.FindObjectOfType<ReadText>();
     }
 
     /*
-     * Description: Called when object is created (after 'Awake')
-     */
-    private void Start() {
-        //Prevents 'RandomWord()' and 'TypeWord()' from being called when not in the 'GetWord' scene
-        if (InGetWordScene) {
-            if (RandomizeWord) {
-                RandomWord();
-            } else {
-                TypeWord();
-            }
-        }
-    }
-
-    /*
      * Description: Allows the user to type in a word for the game
      */
-    private void TypeWord() {
+    public void TypeWord() {
         //Enables the type word group
         typeWordGroup.alpha = 1f;
         typeWordGroup.blocksRaycasts = true;
@@ -67,7 +54,7 @@ public class Word : MonoBehaviour {
     /*
      * Description: Randomly generated a word for the game
      */
-    private void RandomWord() {
+    public void RandomWord() {
         //Disables the type word group
         typeWordGroup.alpha = 0f;
         typeWordGroup.blocksRaycasts = false;

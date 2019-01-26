@@ -21,6 +21,12 @@ public class ReadText : MonoBehaviour {
     //Access the 'Word' script
     private Word word;
 
+    //Access the UI canvas groups in the 'GetWord' scene
+    [SerializeField]
+    private CanvasGroup typeWordGroup;
+    [SerializeField]
+    private CanvasGroup randomWordGroup;
+
     /*
      * Description: Used for initalization and getting script references
      */
@@ -32,6 +38,15 @@ public class ReadText : MonoBehaviour {
      * Description: Gets the user input and sends it to the 'Word' script
      */
     public void ReadUserInput() {
+        //Enables the type word group
+        typeWordGroup.alpha = 1f;
+        typeWordGroup.blocksRaycasts = true;
+
+        //Disables the random word group
+        randomWordGroup.alpha = 0f;
+        randomWordGroup.blocksRaycasts = false;
+
+        //The word inputed by the user
         string tempWord = inputWord.text;
         //Makes the string lowercase
         tempWord = tempWord.ToLower();
@@ -45,6 +60,15 @@ public class ReadText : MonoBehaviour {
      * Description: Picks a random word from 'words.txt'
      */
     public void ReadTextFile() {
+        //Disables the type word group
+        typeWordGroup.alpha = 0f;
+        typeWordGroup.blocksRaycasts = false;
+
+        //Enables the random word group
+        randomWordGroup.alpha = 1f;
+        randomWordGroup.blocksRaycasts = true;
+
+        //A string containing the entire txt file
         string wholeTxtFileAsOneString = wordListTextFile.text;
 
         //Creates a list and makes each word and element of the list

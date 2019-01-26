@@ -9,13 +9,13 @@ using UnityEngine.SceneManagement;
  */
 public class GameManager : MonoBehaviour {
 
-    private Word word;
+    private ReadText readText;
 
     /*
      * Description: Used for initialization and getting script references
      */
     private void Awake() {
-        word = GameObject.FindObjectOfType<Word>();
+        readText = GameObject.FindObjectOfType<ReadText>();
     }
 
     /*
@@ -27,9 +27,9 @@ public class GameManager : MonoBehaviour {
 
         if (currentSceneName == "GetWord") {
             if (Word.RandomizeWord) {
-                word.RandomWord();
+                readText.ReadTextFile();
             } else {
-                word.TypeWord();
+                readText.ReadUserInput();
             }
         } else if (currentSceneName == "Main") {
 

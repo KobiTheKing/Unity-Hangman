@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 /*
  * Description: Generates and stores the word being guessed
- * Methods: void Awake(), void Start(), void TypeWord(), void GetWord()
+ * Methods: void GetWord()
  */
 public class Word : MonoBehaviour {
 
@@ -18,50 +18,6 @@ public class Word : MonoBehaviour {
 
     //True if randomizing word, false if typing word
     private static bool randomizeWord;
-
-    //Access the 'ReadText' script
-    private ReadText readText;
-
-    //Access the UI canvas groups in the 'GetWord' scene
-    [SerializeField]
-    private CanvasGroup typeWordGroup;
-    [SerializeField]
-    private CanvasGroup randomWordGroup;
-
-    /*
-     * Description: Used for initialization and getting script references
-     */
-    void Awake() {
-        readText = GameObject.FindObjectOfType<ReadText>();
-    }
-
-    /*
-     * Description: Allows the user to type in a word for the game
-     */
-    public void TypeWord() {
-        //Enables the type word group
-        typeWordGroup.alpha = 1f;
-        typeWordGroup.blocksRaycasts = true;
-
-        //Disables the random word group
-        randomWordGroup.alpha = 0f;
-        randomWordGroup.blocksRaycasts = false;
-    }
-
-    /*
-     * Description: Randomly generated a word for the game
-     */
-    public void RandomWord() {
-        //Disables the type word group
-        typeWordGroup.alpha = 0f;
-        typeWordGroup.blocksRaycasts = false;
-
-        //Enables the random word group
-        randomWordGroup.alpha = 1f;
-        randomWordGroup.blocksRaycasts = true;
-
-        readText.ReadTextFile();
-    }
 
     /*
      * Description: Gets the word and converts it to an array of characters

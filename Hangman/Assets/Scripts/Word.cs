@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 /*
  * Description: Generates and stores the word being guessed
- * Methods: void Awake(), void Start(), void TypeWord(), string GetWord()
+ * Methods: void Awake(), void Start(), void TypeWord(), void GetWord()
  */
 public class Word : MonoBehaviour {
 
@@ -79,7 +79,11 @@ public class Word : MonoBehaviour {
         readText.ReadTextFile();
     }
 
-    public string GetWord(string fullWord) {
+    /*
+     * Description: Gets the word and converts it to an array of characters
+     * Params: fullWord = the word that has been selected
+     */
+    public void GetWord(string fullWord) {
         currentWord = fullWord;
 
         wordCharacters = currentWord.ToCharArray();

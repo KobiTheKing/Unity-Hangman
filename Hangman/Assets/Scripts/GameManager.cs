@@ -10,6 +10,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour {
 
     private ReadText readText;
+    private SetupGame setupGame;
 
     /*
      * Description: Used for initialization and getting script references

@@ -705,8 +705,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf7121b90f2dd5b4ab52f34fb4a85374, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  typeWordGroup: {fileID: 1078739415}
-  randomWordGroup: {fileID: 521451831}
 --- !u!4 &874300247
 Transform:
   m_ObjectHideFlags: 0
@@ -818,6 +816,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputWord: {fileID: 123344342}
   wordListTextFile: {fileID: 4900000, guid: 02fe585f77ece0b49bf20c66db6b1d28, type: 3}
+  typeWordGroup: {fileID: 1078739415}
+  randomWordGroup: {fileID: 521451831}
 --- !u!4 &1061037103
 Transform:
   m_ObjectHideFlags: 0

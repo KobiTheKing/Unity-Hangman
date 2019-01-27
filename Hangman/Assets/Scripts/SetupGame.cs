@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 /*
@@ -33,7 +34,6 @@ public class SetupGame : MonoBehaviour {
         //Loops through each letter in the word and spawns them
         for (int counter = 0; counter < Word.WordCharacters.Length; counter++) {
             //GameObject letterPrefabClone = GameObject.FindGameObjectWithTag(Word.WordCharacters[counter]);
-            Debug.Log(Word.WordCharacters[counter].ToString());
             //Instantiates the letter
             GameObject letterPrefabClone = Instantiate(GameObject.FindGameObjectWithTag(Word.WordCharacters[counter].ToString()), letterParent.transform);
 

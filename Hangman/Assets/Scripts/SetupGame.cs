@@ -9,6 +9,15 @@ using UnityEngine;
  */
 public class SetupGame : MonoBehaviour {
 
+    private PrefabManager prefabManager;
+
+    /*
+     * Description: Used for initalization and getting script references
+     */
+    private void Awake() {
+        prefabManager = GameObject.FindObjectOfType<PrefabManager>();
+    }
+
     /*
      * Description: Enables the proper letter spaces
      * Params: letterSpaces = an array of all the letter spaces in order
@@ -33,9 +42,8 @@ public class SetupGame : MonoBehaviour {
 
         //Loops through each letter in the word and spawns them
         for (int counter = 0; counter < Word.WordCharacters.Length; counter++) {
-            //GameObject letterPrefabClone = GameObject.FindGameObjectWithTag(Word.WordCharacters[counter]);
             //Instantiates the letter
-            GameObject letterPrefabClone = Instantiate(GameObject.FindGameObjectWithTag(Word.WordCharacters[counter].ToString()), letterParent.transform);
+            GameObject letterPrefabClone = Instantiate(prefabManager.GetPrefab(Word.WordCharacters[counter].ToString()), letterParent.transform);
 
             //Moves the letter to the proper position
             letterPrefabClone.transform.position = letterSpawnLocations[counter].transform.position;

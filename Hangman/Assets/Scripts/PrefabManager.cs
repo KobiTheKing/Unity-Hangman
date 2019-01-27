@@ -4,7 +4,7 @@ using UnityEngine;
 
 /*
  * Description: Accesses all the prefabs in the game
- * Methods: void Awake(), GameObject GetPrefab(string prefabName),
+ * Methods: GameObject GetPrefab(string prefabName),
  */
 public class PrefabManager : MonoBehaviour {
 
@@ -37,17 +37,10 @@ public class PrefabManager : MonoBehaviour {
     public GameObject z;
 
     /*
-     * Description: Used for initialization and getting script references
-     */
-    private void Awake() {
-        
-    }
-
-    /*
      * Description: Returns a prefab based on a given prefab name
      * Params: prefabName = Name of the prefab being searched for
      */
     public GameObject GetPrefab(string prefabName) {
-        return this.GetType().GetField(prefabName).GetValue(this);
+        return (GameObject)this.GetType().GetField(prefabName).GetValue(this);
     }
 }

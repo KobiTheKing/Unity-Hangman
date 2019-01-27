@@ -20,8 +20,6 @@ public class SetupGame : MonoBehaviour {
         //Enables only enough letter spaces to fit the size of the word
         for (int counter = 0; counter < totalLetters; counter++) {
             letterSpaces[counter].SetActive(true);
-            Debug.Log(counter);
-            Debug.Log(letterSpaces[counter]);
         }
     }
 
@@ -35,8 +33,9 @@ public class SetupGame : MonoBehaviour {
         //Loops through each letter in the word and spawns them
         for (int counter = 0; counter < Word.WordCharacters.Length; counter++) {
             //GameObject letterPrefabClone = GameObject.FindGameObjectWithTag(Word.WordCharacters[counter]);
+            Debug.Log(Word.WordCharacters[counter].ToString());
             //Instantiates the letter
-            GameObject letterPrefabClone = Instantiate(GameObject.FindGameObjectWithTag(Word.WordCharacters[counter]), letterParent.transform);
+            GameObject letterPrefabClone = Instantiate(GameObject.FindGameObjectWithTag(Word.WordCharacters[counter].ToString()), letterParent.transform);
 
             //Moves the letter to the proper position
             letterPrefabClone.transform.position = letterSpawnLocations[counter].transform.position;

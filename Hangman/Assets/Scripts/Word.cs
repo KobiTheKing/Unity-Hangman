@@ -15,7 +15,7 @@ public class Word : MonoBehaviour {
     private static string currentWord;
 
     //Array of every character in the word
-    private static string[] wordCharacters;
+    private static char[] wordCharacters;
 
     //True if randomizing word, false if typing word
     private static bool randomizeWord;
@@ -27,16 +27,10 @@ public class Word : MonoBehaviour {
     public void GetWord(string fullWord) {
         currentWord = fullWord;
 
-        wordCharacters = currentWord.ToCharArray().Select(c => c.ToString()).ToArray(); ;
-        //wordCharacters = Regex.Split(currentWord, string.Empty);
-        //wordCharacters = currentWord.Split("");
-
-        foreach (var item in wordCharacters) {
-            Debug.Log(item);
-        }
+        wordCharacters = currentWord.ToCharArray();
     }
 
     public static bool RandomizeWord { get => randomizeWord; set => randomizeWord = value; }
     public static string CurrentWord { get => currentWord; set => currentWord = value; }
-    public static string[] WordCharacters { get => wordCharacters; set => wordCharacters = value; }
+    public static char[] WordCharacters { get => wordCharacters; set => wordCharacters = value; }
 }

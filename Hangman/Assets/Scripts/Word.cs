@@ -27,8 +27,13 @@ public class Word : MonoBehaviour {
     public void GetWord(string fullWord) {
         currentWord = fullWord;
 
-        //wordCharacters = currentWord.ToCharArray();
-        wordCharacters = Regex.Split(currentWord, string.Empty);
+        wordCharacters = currentWord.ToCharArray().Select(c => c.ToString()).ToArray(); ;
+        //wordCharacters = Regex.Split(currentWord, string.Empty);
+        //wordCharacters = currentWord.Split("");
+
+        foreach (var item in wordCharacters) {
+            Debug.Log(item);
+        }
     }
 
     public static bool RandomizeWord { get => randomizeWord; set => randomizeWord = value; }

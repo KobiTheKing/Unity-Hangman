@@ -15,10 +15,13 @@ public class SetupGame : MonoBehaviour {
     public void EnableLetterSpaces(GameObject[] letterSpaces) {
         //The total amount of letters in the word
         int totalLetters = Word.WordCharacters.Length;
+        Debug.Log(totalLetters);
 
         //Enables only enough letter spaces to fit the size of the word
         for (int counter = 0; counter < totalLetters; counter++) {
             letterSpaces[counter].SetActive(true);
+            Debug.Log(counter);
+            Debug.Log(letterSpaces[counter]);
         }
     }
 

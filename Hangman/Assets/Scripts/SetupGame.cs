@@ -25,9 +25,18 @@ public class SetupGame : MonoBehaviour {
     /*
      * Description: Spawns each letter at the correct location and disables them to start
      */
-    public void SpawnLetters() {
+    public void SpawnLetters(GameObject[] letterSpawnLocations) {
+        //The parent of all the letters in the scene
+        GameObject letterParent = GameObject.Find("Letters");
+
+        //Loops through each letter in the word and spawns them
         for (int counter = 0; counter < Word.WordCharacters.Length; counter++) {
-            GameObject letterPrefabClone = GameObject.FindGameObjectWithTag(Word.WordCharacters[counter]);
+            //GameObject letterPrefabClone = GameObject.FindGameObjectWithTag(Word.WordCharacters[counter]);
+            //Instantiates the letter
+            GameObject letterPrefabClone = Instantiate(GameObject.FindGameObjectWithTag(Word.WordCharacters[counter]), letterParent.transform);
+
+            //Moves the letter to the proper position
+            letterPrefabClone.transform.position = letterSpawnLocations[counter].transform.position;
         }
     }
 

@@ -42,6 +42,7 @@ public class GameManager : MonoBehaviour {
             }
         } else if (currentSceneName == "Main") {
             setupGame.EnableLetterSpaces(letterSpaces);
+            setupGame.SpawnLetters(letterSpawnLocations);
         }
     }
 

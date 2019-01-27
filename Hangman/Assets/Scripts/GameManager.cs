@@ -5,18 +5,23 @@ using UnityEngine.SceneManagement;
 
 /*
  * Description: Manages the flow of the game
- * Methods: void Start(),
+ * Methods: void Awake(), void Start(),
  */
 public class GameManager : MonoBehaviour {
 
     private ReadText readText;
     private SetupGame setupGame;
 
+    //An array of all the letter spawn locations
+    [SerializeField]
+    private GameObject[] letterSpawnLocations;
+
     /*
      * Description: Used for initialization and getting script references
      */
     private void Awake() {
         readText = GameObject.FindObjectOfType<ReadText>();
+        setupGame = GameObject.FindObjectOfType<SetupGame>();
     }
 
     /*

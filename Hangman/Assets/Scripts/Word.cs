@@ -17,6 +17,9 @@ public class Word : MonoBehaviour {
     //Array of every character in the word
     private static char[] wordCharacters;
 
+    //An array of all the letter objects
+    private static GameObject[] letterObjects = new GameObject[10];
+
     //True if randomizing word, false if typing word
     private static bool randomizeWord;
 
@@ -33,4 +36,5 @@ public class Word : MonoBehaviour {
     public static bool RandomizeWord { get => randomizeWord; set => randomizeWord = value; }
     public static string CurrentWord { get => currentWord; set => currentWord = value; }
     public static char[] WordCharacters { get => wordCharacters; set => wordCharacters = value; }
+    public static GameObject[] LetterObjects { get => letterObjects; set => letterObjects = value; }
 }

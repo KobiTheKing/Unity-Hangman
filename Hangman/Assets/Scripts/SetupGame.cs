@@ -47,6 +47,10 @@ public class SetupGame : MonoBehaviour {
 
             //Moves the letter to the proper position
             letterPrefabClone.transform.position = letterSpawnLocations[counter].transform.position;
+
+            letterPrefabClone.SetActive(false);
+
+            Word.LetterObjects[counter] = letterPrefabClone;
         }
     }
 

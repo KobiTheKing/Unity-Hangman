@@ -16,6 +16,9 @@ public class GameManager : MonoBehaviour {
     [SerializeField]
     private GameObject[] letterSpawnLocations;
 
+    [SerializeField]
+    private GameObject[] letterSpaces;
+
     /*
      * Description: Used for initialization and getting script references
      */
@@ -38,7 +41,7 @@ public class GameManager : MonoBehaviour {
                 readText.ReadUserInput();
             }
         } else if (currentSceneName == "Main") {
-
+            setupGame.EnableLetterSpaces(letterSpaces);
         }
     }
 

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7972549193758945541}
   m_Layer: 0
   m_Name: Letter_Z
-  m_TagString: Untagged
+  m_TagString: z
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

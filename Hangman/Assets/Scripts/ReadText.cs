@@ -12,10 +12,12 @@ public class ReadText : MonoBehaviour {
 
     //InputField for the word
     [SerializeField]
+    #pragma warning disable 0649
     private InputField inputWord;
 
     //Access 'words.txt'
     [SerializeField]
+    #pragma warning disable 0649
     private TextAsset wordListTextFile;
 
     //Access the 'Word' script
@@ -23,8 +25,10 @@ public class ReadText : MonoBehaviour {
 
     //Access the UI canvas groups in the 'GetWord' scene
     [SerializeField]
+    #pragma warning disable 0649
     private CanvasGroup typeWordGroup;
     [SerializeField]
+    #pragma warning disable 0649
     private CanvasGroup randomWordGroup;
 
     /*

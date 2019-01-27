@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,7 +15,7 @@ public class Word : MonoBehaviour {
     private static string currentWord;
 
     //Array of every character in the word
-    private static char[] wordCharacters;
+    private static string[] wordCharacters;
 
     //True if randomizing word, false if typing word
     private static bool randomizeWord;
@@ -26,9 +27,11 @@ public class Word : MonoBehaviour {
     public void GetWord(string fullWord) {
         currentWord = fullWord;
 
-        wordCharacters = currentWord.ToCharArray();
+        //wordCharacters = currentWord.ToCharArray();
+        wordCharacters = Regex.Split(currentWord, string.Empty);
     }
 
     public static bool RandomizeWord { get => randomizeWord; set => randomizeWord = value; }
     public static string CurrentWord { get => currentWord; set => currentWord = value; }
+    public static string[] WordCharacters { get => wordCharacters; set => wordCharacters = value; }
 }

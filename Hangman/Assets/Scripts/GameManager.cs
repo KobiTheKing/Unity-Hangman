@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour {
             if (Word.RandomizeWord) {
                 readText.ReadTextFile();
             } else {
-                readText.ReadUserInput();
+                readText.EnableInputField();
             }
         } else if (currentSceneName == "Main") {
             setupGame.EnableLetterSpaces(letterSpaces);

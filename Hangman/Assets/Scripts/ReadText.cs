@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 /*
  * Description: Picks a random word of of the text file or allows the user to input a word
- * Methods: void Awake(), void ReadUserInput(), void ReadTextFile()
+ * Methods: void Awake(), void EnableInputField(), void ReadUserInput(), void ReadTextFile()
  */
 public class ReadText : MonoBehaviour {
 
@@ -39,9 +39,9 @@ public class ReadText : MonoBehaviour {
     }
 
     /*
-     * Description: Gets the user input and sends it to the 'Word' script
+     * Description: Enables the Input Field
      */
-    public void ReadUserInput() {
+    public void EnableInputField() {
         //Enables the type word group
         typeWordGroup.alpha = 1f;
         typeWordGroup.blocksRaycasts = true;
@@ -50,12 +50,21 @@ public class ReadText : MonoBehaviour {
         randomWordGroup.alpha = 0f;
         randomWordGroup.blocksRaycasts = false;
 
+        //Calls the ReadUserInput() method when a word gets inputed
+        inputWord.onEndEdit.AddListener(delegate { ReadUserInput(); });
+    }
+
+    /*
+     * Description: Gets the user input and sends it to the 'Word' script
+     */
+    private void ReadUserInput() {
         //The word inputed by the user
         string tempWord = inputWord.text;
         //Makes the string lowercase
         tempWord = tempWord.ToLower();
         word.GetWord(tempWord);
         Debug.Log(Word.CurrentWord);
+        Debug.Log("test");
 
         SceneManager.LoadScene("Main");
     }

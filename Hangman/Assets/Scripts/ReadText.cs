@@ -63,8 +63,6 @@ public class ReadText : MonoBehaviour {
         //Makes the string lowercase
         tempWord = tempWord.ToLower();
         word.GetWord(tempWord);
-        Debug.Log(Word.CurrentWord);
-        Debug.Log("test");
 
         SceneManager.LoadScene("Main");
     }
@@ -81,16 +79,11 @@ public class ReadText : MonoBehaviour {
         randomWordGroup.alpha = 1f;
         randomWordGroup.blocksRaycasts = true;
 
-        //A string containing the entire txt file
-        string wholeTxtFileAsOneString = wordListTextFile.text;
-
-        //Creates a list and makes each word and element of the list
-        List<string> eachWord = new List<string>();
-        eachWord.AddRange(wholeTxtFileAsOneString.Split("\n"[0]));
+        //Creates an array and makes each word and element of the list
+        string[] eachWord = wordListTextFile.text.Split();
 
         //Randomly picks a word from the list
-        word.GetWord(eachWord[Random.Range(0, eachWord.Count)].ToLower());
-        Debug.Log(Word.CurrentWord);
+        word.GetWord(eachWord[Random.Range(0, eachWord.Length)].ToLower());
 
         SceneManager.LoadScene("Main");
     }

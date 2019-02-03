@@ -50,11 +50,10 @@ public class GameManager : MonoBehaviour {
     }
 
     /*
-     * Description: Called when a letter button is clicked. Finds out if the letter is in the word or not.
+     * Description: Called when a letter button is clicked. Passes the tag as a char
      */
     public void OnClicked(Button button) {
-        Debug.Log(button.tag);
-        word.IsLetterInWord(button.tag);
+        word.IsLetterInWord(button.tag[0]);
     }
 
 }

@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 /*
  * Description: Generates and stores the word being guessed
- * Methods: void GetWord()
+ * Methods: void GetWord(), bool IsLetterInWord(),
  */
 public class Word : MonoBehaviour {
 
@@ -31,6 +31,14 @@ public class Word : MonoBehaviour {
         currentWord = fullWord;
 
         wordCharacters = currentWord.ToCharArray();
+    }
+
+    /*
+     * Description: Returns true if the letter is in the word
+     */
+    public bool IsLetterInWord(string letter) {
+        // char guess = 
+        return true;
     }
 
     public static bool RandomizeWord { get => randomizeWord; set => randomizeWord = value; }

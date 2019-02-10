@@ -6,13 +6,14 @@ using UnityEngine.UI;
 
 /*
  * Description: Manages the flow of the game
- * Methods: void Awake(), void Start(), void OnButtonClick()
+ * Methods: void Awake(), void Start(), void OnClicked(),
  */
 public class GameManager : MonoBehaviour {
 
     private ReadText readText;
     private SetupGame setupGame;
     private Word word;
+    private Character character;
 
     //An array of all the letter spawn locations
     [SerializeField]
@@ -28,6 +29,7 @@ public class GameManager : MonoBehaviour {
         readText = GameObject.FindObjectOfType<ReadText>();
         setupGame = GameObject.FindObjectOfType<SetupGame>();
         word = GameObject.FindObjectOfType<Word>();
+        character = GameObject.FindObjectOfType<Character>();
     }
 
     /*
@@ -50,12 +52,19 @@ public class GameManager : MonoBehaviour {
     }
 
     /*
-     * Description: Called when a letter button is clicked. Passes the tag as a char
+     * Description: Called when a letter button is clicked. Passes the button's tag as a char
      */
     public void OnClicked(Button button) {
         if (word.IsLetterInWord(button.tag[0])) {
+            word.IsGameWon();
+        } else if (!word.IsLetterInWord(button.tag[0])) {
+            character.EnableNextPiece();
+            if (character.IsGameLost()) {
 
+            }
         }
+
+
     }
 
 }

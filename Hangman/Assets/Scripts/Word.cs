@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 /*
  * Description: Generates and stores the word being guessed
- * Methods: void Awake(), void GetWord(), bool IsLetterInWord(),
+ * Methods: void Awake(), void GetWord(), bool IsLetterInWord(), bool IsGameWon(),
  */
 public class Word : MonoBehaviour {
 
@@ -61,6 +61,18 @@ public class Word : MonoBehaviour {
         }
 
         return letterInWord;
+    }
+
+    /*
+     * Description: Returns true if the game has been won
+     */
+    public bool IsGameWon() {
+        if (lettersGuessed == wordCharacters.Length) {
+            Debug.Log("Won");
+            return true;
+        }
+
+        return false;
     }
 
     public static bool RandomizeWord { get => randomizeWord; set => randomizeWord = value; }

@@ -35,6 +35,7 @@ public class PrefabManager : MonoBehaviour {
     public GameObject x;
     public GameObject y;
     public GameObject z;
+    public GameObject redX;
 
     /*
      * Description: Returns a prefab based on a given prefab name

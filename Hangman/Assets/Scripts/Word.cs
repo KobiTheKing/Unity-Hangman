@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 /*
  * Description: Generates and stores the word being guessed
- * Methods: void Awake(), void GetWord(), bool IsLetterInWord(), bool IsGameWon(),
+ * Methods: void Awake(), void GetWord(), bool IsLetterInWord(char guess), bool IsGameWon(),
  */
 public class Word : MonoBehaviour {
 
@@ -45,6 +45,7 @@ public class Word : MonoBehaviour {
 
     /*
      * Description: Returns true if the letter is in the word
+     * Parameters: guess = the letter just guessed
      */
     public bool IsLetterInWord(char guess) {
         int counter = 0;

@@ -6753,6 +6753,7 @@ MonoBehaviour:
   x: {fileID: 2674691749074447788, guid: ffca86e457722f241ba8e8312247d485, type: 3}
   y: {fileID: 4331437021003707879, guid: ed6204c7e4de1ec4cb505953b558f68c, type: 3}
   z: {fileID: 5672178226167608644, guid: ee2707a9330fbb147be6eab92beda3e0, type: 3}
+  redX: {fileID: 671403938160119092, guid: 47ef33aa0c11a9b46a374be18e2153f1, type: 3}
 --- !u!1 &1822143902
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 /*
  * Description: Manages the flow of the game
- * Methods: void Awake(), void Start(), void OnClicked(),
+ * Methods: void Awake(), void Start(), void OnClicked(), void DisableLetterButton(char letter),
  */
 public class GameManager : MonoBehaviour {
 
@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour {
     private SetupGame setupGame;
     private Word word;
     private Character character;
+    private PrefabManager prefabManager;
 
     //An array of all the letter spawn locations
     [SerializeField]
@@ -30,6 +31,7 @@ public class GameManager : MonoBehaviour {
         setupGame = GameObject.FindObjectOfType<SetupGame>();
         word = GameObject.FindObjectOfType<Word>();
         character = GameObject.FindObjectOfType<Character>();
+        prefabManager = GameObject.FindObjectOfType<PrefabManager>();
     }
 
     /*
@@ -64,7 +66,17 @@ public class GameManager : MonoBehaviour {
             }
         }
 
+        DisableLetterButton(button);
+    }
 
+    /*
+     * Description: Disables the button that was just used and places a red X on it
+     * Parameters: letter = the letter just guessed
+     */
+    private void DisableLetterButton(Button button) {
+        button.interactable = false;
+        GameObject redXPrefabClone = Instantiate(prefabManager.GetPrefab("redX"));
+        redXPrefabClone.transform.position = button.transform.position;
     }
 
 }

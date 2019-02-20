@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 /*
  * Description: Manages the flow of the game
@@ -20,8 +21,15 @@ public class GameManager : MonoBehaviour {
     [SerializeField]
     private GameObject[] letterSpawnLocations;
 
+    //An array of all the blank spots a letter can go
     [SerializeField]
     private GameObject[] letterSpaces;
+
+    //The Text that appears when you win or lose
+    [SerializeField]
+    private TextMeshProUGUI wonText;
+    [SerializeField]
+    private TextMeshProUGUI lostText;
 
     /*
      * Description: Used for initialization and getting script references
@@ -58,11 +66,13 @@ public class GameManager : MonoBehaviour {
      */
     public void OnClicked(Button button) {
         if (word.IsLetterInWord(button.tag[0])) {
-            word.IsGameWon();
+            if (word.IsGameWon()) {
+                wonText.text = "Game over. You won!!";
+            }
         } else if (!word.IsLetterInWord(button.tag[0])) {
             character.EnableNextPiece();
             if (character.IsGameLost()) {
-
+                lostText.text = "Game over. You Lost!!";
             }
         }
 
